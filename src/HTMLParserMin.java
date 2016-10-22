@@ -36,6 +36,7 @@ public class HTMLParserMin {
 		
 		String url = "http://www.indeed.ca/jobs?q=developer&l=Calgary%2C+AB&sort=date&start=";
 		
+		// Is there a way to obtain the number of the results with that query?
 		
 		String jobs;
 		int incre = 10;
@@ -55,11 +56,9 @@ public class HTMLParserMin {
 		{
 			try
 			{
-				
 				Document doc = Jsoup.connect(url).get();
 				Elements spanTags = doc.getElementsByTag("span");
-				
-				
+	
 				if(verifyNext(spanTags))
 				{
 					for(Element e : spanTags)
@@ -75,7 +74,7 @@ public class HTMLParserMin {
 					
 				}
 				
-				incre+=20;
+				incre+=10;
 				
 				url = originalURL + incre; 
 				
@@ -89,7 +88,7 @@ public class HTMLParserMin {
 			
 			
 		}
-		return originalURL;
+		return url;
 		
 		
 	}
