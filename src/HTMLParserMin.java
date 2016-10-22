@@ -26,39 +26,72 @@ import org.jsoup.select.Elements;
 public class HTMLParserMin {
 	
 	public static void main(String[] args){
-		String url = "http://ca.indeed.com/jobs?q=developer&l=Calgary%2C+AB&sort=date&start=10&pp=\\";
+		// Hmmm, concatenation
+		
+//		//while spanTags.contains.element with class"np".containsText("Next")
+//		//parse page 1 for information
+//		// put all jobs into object
+//		//modify url
+//		//goto next page
+		
+		String url = "http://www.indeed.ca/jobs?q=developer&l=Calgary%2C+AB&sort=date&start=";
+		
+		
 		String jobs;
+		int incre = 10;
 		
-		jobs = urlBuild(url, "This is a extension");
+		jobs = urlBuild(url, incre);
 		
-
+		System.out.println(jobs);
 		
 	}
 	
 	
-	public static String urlBuild(String url, String add){
+	public static String urlBuild(String url, int incre){
 		
-		try
+		String originalURL = url;
+		
+		while(true)
 		{
-			Document doc = Jsoup.connect(url).get();
-			Elements spanTags = doc.getElementsByTag("span");
-			
-			
-			// verifyNext(spanTags)
-			while(spanTags.hasClass("span")) 
+			try
 			{
-				for(Element e : spanTags){
-					System.out.println(e.text() + "\n");
+				
+				Document doc = Jsoup.connect(url).get();
+				Elements spanTags = doc.getElementsByTag("span");
+				
+				
+				if(verifyNext(spanTags))
+				{
+					for(Element e : spanTags)
+					{
+						System.out.println(e.text());
+						
+					}
 					
 				}
+				else
+				{
+					break;
+					
+				}
+				
+				incre+=20;
+				
+				url = originalURL + incre; 
+				
+				
+				
 			}
+			catch (IOException e) 
+			{
+			    e.printStackTrace();
+			}
+			
+			
 		}
-		catch (IOException e) 
-		{
-		    e.printStackTrace();
-		}
+		return originalURL;
 		
-		return "empty string";
+		
 	}
 	
 	public static boolean verifyNext(Elements spanTags)
@@ -71,6 +104,7 @@ public class HTMLParserMin {
 				temp = true;
 			}
 		}
+		
 		
 		
 		return temp;

@@ -100,3 +100,21 @@
 //		{
 //		    e.printStackTrace();
 //		}
+
+
+
+
+	if (verifyNext(spanTags))
+			{
+				
+					//while(spanTags.hasClass("span") && verifyNext(e)) 
+					//{
+					System.out.println(e.text() + "\n");
+					//}
+					
+					
+				}
+				
+			}
+			
+			
