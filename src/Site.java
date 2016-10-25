@@ -1,3 +1,4 @@
+import org.jsoup.nodes.Document;
 
 public abstract class Site {
 	
@@ -7,46 +8,47 @@ public abstract class Site {
 	private String lastModified;
 	private int increment;
 	
-	String getName(){
+	public String getName(){
 		return name;
 	}
 	
-	void setName(String nameCompany){
-		name = nameCompany ;
+	public void setName(String nameCompany){
+		this.name = nameCompany ;
 	}
 	
 	
-	String getURL(){
+	public String getURL(){
 		return baseURL;
 	}
 	
-	void setURL(String URL){
-		baseURL = URL;
+	public void setURL(String URL){
+		this.baseURL = URL;
 	}
 	
-	int getNumPages(){
+	public int getNumPages(){
 		return numPages;
 	}
 	
-	void setNumPages(int numpages){
-		numPages = numpages;
+	public void setNumPages(int numpages){
+		this.numPages = numpages;
 	}
 	
-	String getLastModified(){
+	public String getLastModified(){
 		return lastModified;
 	}
 	
-	void setLastModified(String lastmodified){
-		lastModified = lastmodified;
+	public void setLastModified(String lastmodified){
+		this.lastModified = lastmodified;
 	}
 	
-	int getIncrement(){
+	public int getIncrement(){
 		return increment;
 	}
 	
-	void setIncrement(int incre){
-		increment = incre;
+	public void setIncrement(int incre){
+		this.increment = incre;
 	}
+
 	
 	
 	

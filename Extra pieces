@@ -117,4 +117,112 @@
 				
 			}
 			
-			
+		// Hmmm, concatenation
+		
+//		//while spanTags.contains.element with class"np".containsText("Next")
+//		//parse page 1 for information
+//		// put all jobs into object
+//		//modify url
+//		//goto next page
+					  //http://www.indeed.ca/jobs?q=developer&l=Calgary%2C+AB&fromage=last&sort=date
+					  //http://ca.indeed.com/jobs?q=Application+analyst&l=Calgary%2C+AB&rq=1&fromage=last
+		
+		
+		// Is there a way to obtain the number of the results with that query?
+		// Refinement is that look at each job posting which is not
+		// Indeed has a class called sdn which is used to mark a post as sponsored
+		// Regardless, the results need to be sorted and then taking the postings that
+		// are less than 24 hours old, or new postings that appeared since the last time stamp
+		
+		/*
+		 * while (e : list of posts)
+		 * {
+		 * 	if(post contains the spn class (means the job posting is sponsored)) {
+		 * 		ignore
+		 * 	}
+		 * 	else
+		 * 	{
+		 *  	if (posting < 1 day)
+		 *  	{
+		 * 			insert post into array
+		 * 		}
+		 * 		else
+		 * 		{
+		 * 			break;
+		 * 		}
+		 * 	}
+		 * }
+		 * 
+		 */
+		
+		//String jobs;
+		//int incre = 10;
+		
+		//jobs = urlBuild(url, incre);
+		
+		//System.out.println(jobs);
+		
+	}
+	
+	
+//	public static String urlBuild(String url, int incre){
+//		
+//		String originalURL = url;
+//		
+//		while(true)
+//		{
+//			try
+//			{
+//				Document doc = Jsoup.connect(url).get();
+//				Elements spanTags = doc.getElementsByTag("span");
+//	
+//				if(verifyNext(spanTags))
+//				{
+//					for(Element e : spanTags)
+//					{
+//						System.out.println(e.text());
+//						
+//					}
+//					
+//				}
+//				else
+//				{
+//					break;
+//					
+//				}
+//				
+//				incre+=10;
+//				
+//				url = originalURL + incre; 
+//				
+//				
+//				
+//			}
+//			catch (IOException e) 
+//			{
+//			    e.printStackTrace();
+//			}
+//			
+//			
+//		}
+//		return url;
+//		
+//		
+//	}
+//	
+//	public static boolean verifyNext(Elements spanTags)
+//	{
+//		Boolean temp = false;
+//		
+//		for(Element e : spanTags)
+//		{
+//			if (e.hasClass("np")&&(e.text().contains("Next"))){
+//				temp = true;
+//			}
+//		}
+//		return temp;
+//		
+//		
+//	}
+	
+	
