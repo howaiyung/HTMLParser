@@ -4,6 +4,7 @@ public abstract class Site {
 	
 	private String name;
 	private String baseURL;
+	private String searchURL;
 	private int numPages;
 	private String lastModified;
 	private int increment;
@@ -17,12 +18,12 @@ public abstract class Site {
 	}
 	
 	
-	public String getURL(){
+	public String getBaseURL(){
 		return baseURL;
 	}
 	
-	public void setURL(String URL){
-		this.baseURL = URL;
+	public void setBaseURL(String baseURL){
+		this.baseURL = baseURL;
 	}
 	
 	public int getNumPages(){
@@ -47,6 +48,14 @@ public abstract class Site {
 	
 	public void setIncrement(int incre){
 		this.increment = incre;
+	}
+
+	public String getSearchURL() {
+		return searchURL;
+	}
+
+	public void setSearchURL(String searchURL) {
+		this.searchURL = searchURL;
 	}
 
 	

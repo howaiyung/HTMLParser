@@ -27,15 +27,32 @@ public class HTMLParserMin {
 	
 	public static void main(String[] args){
 		
-		String url = "http://www.indeed.ca/jobs?q=developer&l=Calgary,+AB&sort=date&start=";
-		String name = "developer";
-
-		indeed newSearch = new indeed(name, url, 20);
+		String baseURL = "http://www.indeed.ca";
 		
-		System.out.println(newSearch.getURL());
+		String developerURL = "/jobs?q=developer&l=Calgary,+AB&sort=date&start=";
+		String dName = "developer";
+		
+		String systemAnalystURL = "/jobs?q=system+analyst&l=Calgary%2C+AB&sort=date&start=";
+		String saName = "System Analyst";
+		
+		String businessAnalystURL = "/jobs?q=business+analyst&l=Calgary%2C+AB&fromage=last&sort=date&start=";
+		String baName = "Business Analyst";
+		
+		String programmerAnalystURL = "/jobs?q=programmer+analyst&l=Calgary%2C+AB&sort=date";
+		String paName = "Programmer Analyst";
+		
+		
+		indeed developerSearch = new indeed(dName, baseURL, developerURL, 20);
+		indeed systemAnalystSearch = new indeed(saName, baseURL, systemAnalystURL, 20);
+		
+		
+		/*System.out.println(newSearch.getBaseURL().concat(newSearch.getSearchURL()));
 		System.out.println(newSearch.getName());
 		System.out.println(newSearch.getIncrement());
-		System.out.println(newSearch.getNumPages());
+		System.out.println(newSearch.getNumPages());*/
+		
+		
+		
 		
 		
 		
